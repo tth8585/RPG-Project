@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29425b3d02de4454b8195ea75e326f84, type: 3}
-  m_Name: New Heal Item Effect
+  m_Name: small potion heal
   m_EditorClassIdentifier: 
   healthAmount: 0
