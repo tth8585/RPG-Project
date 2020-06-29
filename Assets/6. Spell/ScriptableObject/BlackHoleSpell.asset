@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c717a2adf4e5349a8afc5d77283335, type: 3}
+  m_Name: BlackHoleSpell
+  m_EditorClassIdentifier: 
+  spellAbility: 2
+  spellAffects: 1
+  spellDamageType: 0
+  spellFX: {fileID: 1368701538270862, guid: da228e031cd49034b9ee6ab414027c6e, type: 3}
+  spellId: 3
+  spellName: Black Hole
+  spellIcon: {fileID: 21300000, guid: b4cf912984d2aba4aae84f325f018142, type: 3}
+  spellDescription: Black hole
+  spellDamage: 100
+  spellCastTime: 0
+  spellRange: 25
+  spellAoe: 5
+  spellNumberTarget: 3
+  spellCoolDown: 20
+  currentSpellCoolDown: 0
+  manaCost: 50

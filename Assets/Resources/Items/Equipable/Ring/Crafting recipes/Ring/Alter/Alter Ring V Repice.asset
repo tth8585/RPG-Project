@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b270646f2c681944ac8ae28cde8cd8a, type: 3}
+  m_Name: Alter Ring V Repice
+  m_EditorClassIdentifier: 
+  materialsItem:
+  - item: {fileID: 11400000, guid: 8e9a15c5aee2f1e4397419717e53fae1, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 06e147d967c5ca7498c4c50314bbcf31, type: 2}
+    amount: 1
+  resultsItem:
+  - item: {fileID: 11400000, guid: 95c5aee74ffa4ee4dad29ed787b6ce55, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 10b7e496c1c6e3c47b319f6fd57ec7c8, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 17c449bc934b16545b1d783b1996fedd, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 2dbe273a8f9f77840b806db7bf85ee10, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 344d397b708409e42ad049650748ebd7, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 95572340e3424da4ab7c9b166a2ce875, type: 2}
+    amount: 1

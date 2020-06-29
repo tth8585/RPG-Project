@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5703891964885039562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5703891964885039563}
+  - component: {fileID: 5703891964885039572}
+  m_Layer: 0
+  m_Name: GameAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5703891964885039563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703891964885039562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5703891964885039572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703891964885039562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748b95d68d0d16c44ac24bb1defe084b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAudioClipsArray:
+  - sound: 0
+    audioClip: {fileID: 8300000, guid: 8723bd7d4cb4a3a4a8fdd674311a3a66, type: 3}
+  - sound: 1
+    audioClip: {fileID: 8300000, guid: 8723bd7d4cb4a3a4a8fdd674311a3a66, type: 3}
+  - sound: 2
+    audioClip: {fileID: 8300000, guid: 8723bd7d4cb4a3a4a8fdd674311a3a66, type: 3}
+  - sound: 3
+    audioClip: {fileID: 8300000, guid: 8723bd7d4cb4a3a4a8fdd674311a3a66, type: 3}
+  - sound: 4
+    audioClip: {fileID: 8300000, guid: 8723bd7d4cb4a3a4a8fdd674311a3a66, type: 3}
+  - sound: 5
+    audioClip: {fileID: 8300000, guid: 584a820e08c01bc46966865c905b2fbd, type: 3}
+  - sound: 6
+    audioClip: {fileID: 8300000, guid: 480d7e65563df9745abecf347b1e92a2, type: 3}
+  pfDamagePopup: {fileID: 5448698561990669345, guid: 65a4edce5d2fcc4478a9cb032c64b9d0,
+    type: 3}

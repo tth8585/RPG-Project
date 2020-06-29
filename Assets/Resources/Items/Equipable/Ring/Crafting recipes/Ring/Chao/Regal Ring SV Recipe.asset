@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b270646f2c681944ac8ae28cde8cd8a, type: 3}
+  m_Name: Regal Ring SV Recipe
+  m_EditorClassIdentifier: 
+  materialsItem:
+  - item: {fileID: 11400000, guid: 1ac57caea07ab5e48b5790f4493a4e8f, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 0dd8c3ee0e6bc7a468d171d30ec9e442, type: 2}
+    amount: 1
+  resultsItem:
+  - item: {fileID: 11400000, guid: 7e09a050e66582042a3b9ff3ad9ea787, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 7729d309ef624e64c95b637d0c191a43, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 640780a0ff8239b4189395ed6004a54e, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: ce9589bff28dccb49b597dc6938813e1, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 2da9125dbfd67a241bb61673fd56aa73, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: a697866c447815646860157621b9430f, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 900b46dc68057ad4a81b526bebf870be, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: f2e44a15c9c2b314091ab23ab021cbfe, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 6b2a31671e9b9c9448ca0c1b7f2bb29e, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: fd63df9afe468c44ea38a545102adc5d, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 988653cb9e697b648882c079ed182205, type: 2}
+    amount: 1

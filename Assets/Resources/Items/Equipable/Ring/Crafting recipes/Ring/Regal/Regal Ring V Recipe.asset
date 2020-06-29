@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b270646f2c681944ac8ae28cde8cd8a, type: 3}
+  m_Name: Regal Ring V Recipe
+  m_EditorClassIdentifier: 
+  materialsItem:
+  - item: {fileID: 11400000, guid: 6166156e797f7574d92ffa690e2c2ae3, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 06e147d967c5ca7498c4c50314bbcf31, type: 2}
+    amount: 1
+  resultsItem:
+  - item: {fileID: 11400000, guid: 900b46dc68057ad4a81b526bebf870be, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: a697866c447815646860157621b9430f, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 0dd8c3ee0e6bc7a468d171d30ec9e442, type: 2}
+    amount: 1

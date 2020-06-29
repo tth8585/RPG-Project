@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b270646f2c681944ac8ae28cde8cd8a, type: 3}
+  m_Name: Scouring A M Recipe
+  m_EditorClassIdentifier: 
+  materialsItem:
+  - item: {fileID: 11400000, guid: 73e6a181e96626c41a188c758f5265a3, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 640780a0ff8239b4189395ed6004a54e, type: 2}
+    amount: 1
+  resultsItem:
+  - item: {fileID: 11400000, guid: 82329ced110a4a34ab2c9f9be5c6851a, type: 2}
+    amount: 1

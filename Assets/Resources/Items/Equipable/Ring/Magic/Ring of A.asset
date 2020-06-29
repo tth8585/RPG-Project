@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e69dbd9800c303e49829ab37de32c51a, type: 3}
+  m_Name: Ring of A
+  m_EditorClassIdentifier: 
+  id: 344d397b708409e42ad049650748ebd7
+  itemName: Ring of A
+  maximumStack: 1
+  iconItem: {fileID: -3458441809183539536, guid: 54d009eae9571d2458bdabb86ace3379,
+    type: 3}
+  itemRarity: 1
+  equipmentType: 3
+  HP: 0
+  MP: 0
+  STR: 0
+  INT: 0
+  AGI: 10
+  hpRegen: 0
+  mpRegen: 0

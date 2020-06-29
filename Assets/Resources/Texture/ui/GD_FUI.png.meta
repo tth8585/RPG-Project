@@ -1,0 +1,848 @@
+fileFormatVersion: 2
+guid: 15797c40fbe9f2d4cac80a580b67098f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1788448729790384004
+    second: GD_FUI_0
+  - first:
+      213: 4738534308884273562
+    second: GD_FUI_1
+  - first:
+      213: 8181482958790141023
+    second: GD_FUI_2
+  - first:
+      213: 5704825987300327602
+    second: GD_FUI_3
+  - first:
+      213: 5158829777478370822
+    second: GD_FUI_4
+  - first:
+      213: -777667887455710506
+    second: GD_FUI_5
+  - first:
+      213: -4557468216431902145
+    second: GD_FUI_6
+  - first:
+      213: -337140969198041633
+    second: GD_FUI_7
+  - first:
+      213: -8889674442854800556
+    second: GD_FUI_8
+  - first:
+      213: 1567683347897546880
+    second: GD_FUI_9
+  - first:
+      213: 4041246292627514878
+    second: GD_FUI_10
+  - first:
+      213: 8355218286343119065
+    second: GD_FUI_11
+  - first:
+      213: -8333618483135920205
+    second: GD_FUI_12
+  - first:
+      213: 2382750888271547880
+    second: GD_FUI_13
+  - first:
+      213: -2847521996991077146
+    second: GD_FUI_14
+  - first:
+      213: 3494403776401802497
+    second: GD_FUI_15
+  - first:
+      213: -2000397217793561333
+    second: GD_FUI_16
+  - first:
+      213: -1101073172671395501
+    second: GD_FUI_17
+  - first:
+      213: -7127729479748995764
+    second: GD_FUI_18
+  - first:
+      213: 2177910194566190658
+    second: GD_FUI_19
+  - first:
+      213: -5283186360961807091
+    second: GD_FUI_20
+  - first:
+      213: -3160955324613722473
+    second: GD_FUI_21
+  - first:
+      213: -5554414397116132055
+    second: GD_FUI_22
+  - first:
+      213: -8346320058897316005
+    second: GD_FUI_23
+  - first:
+      213: -6772609979428590778
+    second: GD_FUI_24
+  - first:
+      213: -4620382747055128265
+    second: GD_FUI_25
+  - first:
+      213: 7181202377124997069
+    second: GD_FUI_26
+  - first:
+      213: 9076740765282832058
+    second: GD_FUI_27
+  - first:
+      213: 181043768738262429
+    second: GD_FUI_28
+  - first:
+      213: -6549596839646955618
+    second: GD_FUI_29
+  - first:
+      213: -1432434065591810691
+    second: GD_FUI_30
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GD_FUI_0
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 1366
+        width: 375
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 30, y: 17, z: 74, w: 20}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4878726e4a8d1d810800000000000000
+      internalID: 1788448729790384004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_2
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 1303
+        width: 351
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 9, z: 44, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54299657677a8170800000000000000
+      internalID: 8181482958790141023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_3
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 353
+        width: 599
+        height: 930
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 156, y: 92, z: 151, w: 126}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0047e820d9b2f40800000000000000
+      internalID: 5704825987300327602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_4
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 991
+        width: 538
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 69, y: 73, z: 69, w: 60}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6064e479958d79740800000000000000
+      internalID: 5158829777478370822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_5
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 989
+        width: 735
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d259f63d2b2535f0800000000000000
+      internalID: -777667887455710506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_6
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 793
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32817cbdce90c0c0800000000000000
+      internalID: -4557468216431902145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_7
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 736
+        width: 123
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 83, y: 73, z: 33, w: 63}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd548b3231c325bf0800000000000000
+      internalID: -337140969198041633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_8
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 771
+        width: 96
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45365c8913881a480800000000000000
+      internalID: -8889674442854800556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_9
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 556
+        width: 321
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0887abfe2b781c510800000000000000
+      internalID: 1567683347897546880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_10
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 635
+        width: 288
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 39, z: 38, w: 33}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef56de97714651830800000000000000
+      internalID: 4041246292627514878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_12
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 627
+        width: 51
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7cd0b942a095c80800000000000000
+      internalID: -8333618483135920205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_13
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 515
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed0cabfe4b311120800000000000000
+      internalID: 2382750888271547880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_14
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 515
+        width: 77
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e46c3f94d19b78d0800000000000000
+      internalID: -2847521996991077146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_15
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 525
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105863278bd9e7030800000000000000
+      internalID: 3494403776401802497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_16
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 525
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d2cb734592d34e0800000000000000
+      internalID: -2000397217793561333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_17
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 410
+        width: 68
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359853f78c338b0f0800000000000000
+      internalID: -1101073172671395501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_18
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 405
+        width: 66
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c453b707dc7351d90800000000000000
+      internalID: -7127729479748995764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_19
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 393
+        width: 444
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 54, y: 39, z: 58, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246d1db68cd793e10800000000000000
+      internalID: 2177910194566190658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_20
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 364
+        width: 153
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0dcea80ff95ea6b0800000000000000
+      internalID: -5283186360961807091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_21
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 221
+        width: 499
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 118, y: 82, z: 120, w: 68}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ef48531e70224d0800000000000000
+      internalID: -3160955324613722473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_22
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 302
+        width: 362
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 44, y: 8, z: 34, w: 9}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925d39cc881cae2b0800000000000000
+      internalID: -5554414397116132055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_23
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 228
+        width: 77
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 26, y: 35, z: 29, w: 21}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5745bb802aeb2c80800000000000000
+      internalID: -8346320058897316005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_24
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 257
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ba4e54b1bd202a0800000000000000
+      internalID: -6772609979428590778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_25
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 70
+        width: 76
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7318f631f5a11efb0800000000000000
+      internalID: -4620382747055128265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_26
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 99
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7e9bca381c8a360800000000000000
+      internalID: 7181202377124997069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_27
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 96
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe8df8a2af07fd70800000000000000
+      internalID: 9076740765282832058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_28
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 96
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d21743952338200800000000000000
+      internalID: 181043768738262429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_29
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 96
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9772d620682b15a0800000000000000
+      internalID: -6549596839646955618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_30
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 35
+        width: 555
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d754b348ec8fe1ce0800000000000000
+      internalID: -1432434065591810691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1205
+        width: 427
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 126, y: 30, z: 191, w: 26}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a995c0d19d7a2c140800000000000000
+      internalID: 4738534308884273562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_11
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 1066
+        width: 384
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 34, y: 63, z: 97, w: 53}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0645a73c2b3f370800000000000000
+      internalID: 8355218286343119065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
