@@ -16,7 +16,7 @@ public class LevelUpSystem : MonoBehaviour
     [SerializeField] LevelWindow levelWindow;
     private void Awake()
     {
-        SetValue();
+        //SetValue();
     }
     private void Start()
     {
@@ -24,9 +24,9 @@ public class LevelUpSystem : MonoBehaviour
     }
     void SetValue()
     {
-        currentLevel = 1;
-        reverseFillAmount = 0;
-        levelWindow.SetData(currentLevel, reverseFillAmount);
+        //currentLevel = 1;
+        //reverseFillAmount = 0;
+        //levelWindow.SetData(currentLevel, reverseFillAmount);
     }
     public void AddXP(int amount)
     {

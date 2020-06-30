@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         statPanel.SetStats(playerStats.STR, playerStats.INT, playerStats.AGI);
         
         SetEvents();
-        LoadDataFromSaveFile();
+        //LoadDataFromSaveFile();
         isDead = false;
 
         statPanel.UpdateStatValue();
@@ -320,6 +320,7 @@ public class PlayerController : MonoBehaviour
 
     public void Equip(EquipableItem item)
     {
+        //Debug.Log(item);
         if (inventory.RemoveItem(item))
         {
             EquipableItem previousItem;

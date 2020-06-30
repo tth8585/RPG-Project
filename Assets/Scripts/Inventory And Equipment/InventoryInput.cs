@@ -11,8 +11,6 @@ public class InventoryInput : MonoBehaviour
 
     Animator animMenu;
     bool menuShow;
-
-    ItemSaveManager itemSaveManager;
     [SerializeField] PlayerController playerController;
 
     [SerializeField] KeyCode[] toggleMenu;
@@ -25,7 +23,6 @@ public class InventoryInput : MonoBehaviour
     private void Start()
     {
         inventoryGameObject = Inventory.Instance.inventoryPanel;
-        itemSaveManager = ItemSaveManager.Instance;
         menuShow = false;
         animMenu = menuPanel.GetComponent<Animator>();
     }
@@ -108,15 +105,13 @@ public class InventoryInput : MonoBehaviour
 
     public void LoadDataFromSaveFile()
     {
-        itemSaveManager.LoadEquipment(playerController);
-        itemSaveManager.LoadInventory();
-        //itemSaveManager.LoadStash(this);
+        LoadManager.instance.LoadData();
+        LoadManager.instance.LoadItemData(playerController);
     }
 
     public void SaveDataToSaveFile()
     {
-        itemSaveManager.SaveInventory();
-        itemSaveManager.SaveEquipment();
-        itemSaveManager.SaveStash();
+        LoadManager.instance.SaveData();
+        LoadManager.instance.SaveItemData();
     }
 }

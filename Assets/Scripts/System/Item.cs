@@ -23,8 +23,10 @@ public class Item:  ScriptableObject
 
     private void OnValidate()
     {
-        string path = AssetDatabase.GetAssetPath(this);
-        id = AssetDatabase.AssetPathToGUID(path);
+    #if UNITY_EDITOR
+            string path = AssetDatabase.GetAssetPath(this);
+            id = AssetDatabase.AssetPathToGUID(path);
+    #endif
     }
 
     public virtual Item GetCopy()

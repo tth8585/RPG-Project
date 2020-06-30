@@ -50,6 +50,7 @@ public class ItemSaveManager : MonoBehaviour
     }
     public void LoadEquipment(PlayerController character)
     {
+        
         ItemContainerSaveData saveSlots = ItemSaveIO.LoadItems(EquipmentFileName);
         if (saveSlots == null)
         {
@@ -63,7 +64,7 @@ public class ItemSaveManager : MonoBehaviour
                 continue;
             }
 
-            Item item = itemDataBase.GetItemCopy(saveSlot.ItemID); ;
+            Item item = itemDataBase.GetItemCopy(saveSlot.ItemID);
             Inventory.Instance.AddItem(item);
             character.Equip((EquipableItem) item);
         }
