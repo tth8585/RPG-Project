@@ -14,6 +14,10 @@ public class CursorController : MonoBehaviour
 
     private void Update()
     {
+        if (Camera.main == null)
+        {
+            return;
+        }
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
