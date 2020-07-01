@@ -93,6 +93,7 @@
     <Compile Include="Assets\4. Other\NPC\NPC2\anim\PlayerRandomIdleAnim.cs" />
     <Compile Include="Assets\4. Other\PoisonArea\PoisonArea.cs" />
     <Compile Include="Assets\4. Other\PoisonArea\WellArea.cs" />
+    <Compile Include="Assets\4. Other\StartScene\Script\StartMenuInput.cs" />
     <Compile Include="Assets\5. Package\ARPG Effects\Demo\Scripts\ARPGFXLoopScript.cs" />
     <Compile Include="Assets\5. Package\ARPG Effects\Demo\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\5. Package\ARPG Effects\Scripts\ARPGFXLightFade.cs" />

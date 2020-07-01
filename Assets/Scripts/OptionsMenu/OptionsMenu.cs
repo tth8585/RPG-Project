@@ -15,6 +15,10 @@ public class OptionsMenu : MonoBehaviour
     {
         handSlider.OnValueChanged += HandSlider_OnValueChanged;
     }
+    private void OnEnable()
+    {
+        handSlider.GetVolumeValue(GetVolume());
+    }
     private void Start()
     {
         resolutions = Screen.resolutions;
@@ -55,7 +59,8 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("Volume",volume);  
+        audioMixer.SetFloat("Volume",volume);
+        Debug.Log(volume);
     }
 
     public void SetQuality(int qualityIndex)
@@ -68,5 +73,11 @@ public class OptionsMenu : MonoBehaviour
         Screen.fullScreen = isFull;
     }
 
+    public float GetVolume()
+    {
+        float volume;
+        audioMixer.GetFloat("Volume", out volume);
+        return volume;
+    }
 
 }

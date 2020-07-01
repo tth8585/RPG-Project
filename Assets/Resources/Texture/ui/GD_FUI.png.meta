@@ -95,6 +95,9 @@ TextureImporter:
   - first:
       213: -1432434065591810691
     second: GD_FUI_30
+  - first:
+      213: 7003877883012322463
+    second: GD_FUI_31
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -826,6 +829,27 @@ TextureImporter:
       bones: []
       spriteID: 9d0645a73c2b3f370800000000000000
       internalID: 8355218286343119065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GD_FUI_31
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1035
+        width: 448
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 117, y: 50, z: 39, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f941a2393d5c23160800000000000000
+      internalID: 7003877883012322463
       vertices: []
       indices: 
       edges: []
