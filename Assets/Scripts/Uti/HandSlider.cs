@@ -50,15 +50,9 @@ public class HandSlider : MonoBehaviour,IDragHandler
     }
     private void SetUp()
     {
-        //float rectX;
-        //Vector2 start = new Vector2(minHandPos, 0);
-        //Vector2 end = new Vector2(ref rectX, 0);
-        //currentPercent * (maxHandPos - minHandPos);
-    }
-    public void GetVolumeValue(float value)
-    {
-        currentPercent = value;
-        Debug.Log(value);
+        currentPercent = OptionsMenu.Instance.GetVolume();
+        fillImage.fillAmount = FillAmounteReveser(currentPercent);
+        dragRectTransform.anchoredPosition = new Vector2(MagnitudeReveser(currentPercent), 0);
     }
     private float CalFillAmount()
     {
@@ -78,10 +72,66 @@ public class HandSlider : MonoBehaviour,IDragHandler
         return percent;
     }
 
+    private float FillAmounteReveser(float value)
+    {
+        float result = 0;
+        result = (float)((value + 20) / 40);
+        return result;
+    }
+
     private float MagnitudeReveser(float value)
     {
-        float result =0;
-        result = value * (maxHandPos - minHandPos);
+        float result = 0;
+        Vector2 start = new Vector2(minHandPos, 0);
+        float distance;
+        distance = (value + 20) * (maxHandPos - minHandPos) * 0.01f * 2.5f;
+        result = SolveQuadratic(1, -2 * minHandPos, minHandPos * minHandPos - distance * distance);
         return result;
+    }
+
+    private float SolveQuadratic(double a, double b, double c)
+    {
+        double sqrtpart = b * b - 4 * a * c;
+
+        double x, x1, x2, img;
+
+        if (sqrtpart > 0)
+
+        {
+
+            x1 = (-b + System.Math.Sqrt(sqrtpart)) / (2 * a);
+
+            x2 = (-b - System.Math.Sqrt(sqrtpart)) / (2 * a);
+
+            //Console.WriteLine("Two Real Solutions: {0,8:f4} or  {1,8:f4}", x1, x2);
+            //Debug.Log(x1 + "/"+x2);
+            return (float)x1;
+        }
+
+        else if (sqrtpart < 0)
+
+        {
+
+            sqrtpart = -sqrtpart;
+
+            x = -b / (2 * a);
+
+            img = System.Math.Sqrt(sqrtpart) / (2 * a);
+
+            ///Console.WriteLine("Two Imaginary Solutions: {0,8:f4} + {1,8:f4} i or {2,8:f4} + {3,8:f4} i", x, img, x, img);
+            //Debug.Log("vo nghiem hay gi ?");
+            return 0;
+        }
+
+        else
+
+        {
+
+            x = (-b + System.Math.Sqrt(sqrtpart)) / (2 * a);
+
+            //Debug.Log(x);
+            return (float   )x;
+
+        }
     }
 }

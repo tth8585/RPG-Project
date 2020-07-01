@@ -15,8 +15,6 @@ public class StartMenuInput : MonoBehaviour
 
     const string POPUPSTARTMENU_ANIM_APPEAR = "RightToLeft";
     const string POPUPSTARTMENU_ANIM_DISAPPEAR = "LeftToRight";
-    const string SETTINGMENU_ANIM_APPEAR = "RightToLeft";
-    const string SETTINGMENU_ANIM_DISAPPEAR = "LeftToRight";
 
     [SerializeField] GameObject pressAnyKey;
     [SerializeField] GameObject popupStartMenu;

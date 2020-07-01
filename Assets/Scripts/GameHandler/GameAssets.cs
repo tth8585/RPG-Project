@@ -26,5 +26,5 @@ public class GameAssets : MonoBehaviour
         public AudioClip audioClip;
     }
     //damage popup
-    public Transform pfDamagePopup;
+    //public Transform pfDamagePopup;
 }

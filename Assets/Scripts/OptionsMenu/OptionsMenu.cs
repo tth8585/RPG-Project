@@ -6,18 +6,25 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class OptionsMenu : MonoBehaviour
 {
+    public static OptionsMenu Instance { get; set; }
+
     public AudioMixer audioMixer;
     [SerializeField] HandSlider handSlider;
     private Resolution[] resolutions;
     [SerializeField] private Dropdown resolutionDropDown;
-    [SerializeField] private GameObject btnQuit;
+    //[SerializeField] private GameObject btnQuit;
     private void Awake()
     {
         handSlider.OnValueChanged += HandSlider_OnValueChanged;
-    }
-    private void OnEnable()
-    {
-        handSlider.GetVolumeValue(GetVolume());
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
     private void Start()
     {
@@ -40,12 +47,12 @@ public class OptionsMenu : MonoBehaviour
         resolutionDropDown.value = currentIndex;
         resolutionDropDown.RefreshShownValue();
 
-        btnQuit.GetComponent<UI_Button>().ClickFunc = () => 
-        { 
-            Debug.Log("click");
-            Loader.Load(Loader.Scene.StartMenu);
-        };
-        btnQuit.GetComponent<UI_Button>().AddButtonSounds();
+        //btnQuit.GetComponent<UI_Button>().ClickFunc = () => 
+        //{ 
+        //    Debug.Log("click");
+        //    Loader.Load(Loader.Scene.StartMenu);
+        //};
+        //btnQuit.GetComponent<UI_Button>().AddButtonSounds();
     }
     public void SetSize(int sizeIndex)
     {
@@ -60,7 +67,6 @@ public class OptionsMenu : MonoBehaviour
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("Volume",volume);
-        Debug.Log(volume);
     }
 
     public void SetQuality(int qualityIndex)
@@ -79,5 +85,4 @@ public class OptionsMenu : MonoBehaviour
         audioMixer.GetFloat("Volume", out volume);
         return volume;
     }
-
 }

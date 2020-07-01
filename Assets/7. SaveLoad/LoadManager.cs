@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -86,6 +87,8 @@ public class LoadManager : MonoBehaviour
 
         data.level = c.transform.GetComponent<LevelUpSystem>().currentLevel;
         data.exp = c.transform.GetComponent<LevelUpSystem>().currentXP;
+
+        data.volumeSize = OptionsMenu.Instance.GetVolume();
     }
     private void GetData()
     {
@@ -94,6 +97,22 @@ public class LoadManager : MonoBehaviour
         c.transform.GetComponent<LevelUpSystem>().currentLevel = data.level;
         c.transform.GetComponent<LevelUpSystem>().currentXP = data.exp;
         c.transform.GetComponent<LevelUpSystem>().AddXP(0);
+
+        //if(OptionsMenu.Instance == null)
+        //{
+        //    StartCoroutine(GetSound());
+        //}
+        //else
+        //{
+           
+        //}
+        OptionsMenu.Instance.SetVolume(data.volumeSize);
+    }
+
+    private IEnumerator GetSound()
+    {
+        yield return new WaitForSeconds(1f);
+        
     }
 }
 [System.Serializable]
@@ -102,6 +121,8 @@ public class Data
     public Point pos;
     public int level = 1;
     public int exp = 0;
+
+    public float volumeSize = 0;
 
     public Data()
     {
