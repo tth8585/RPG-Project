@@ -1,9 +1,12 @@
 ﻿
+
 using System.Collections;
 using UnityEngine;
 
+
 public class StartMenuInput : MonoBehaviour
 {
+    public static StartMenuInput Instance { get; set; }
     const string HPBAR_ANIM_APPEAR = "barHpAppear";
     const string HPBAR_ANIM_DISAPPEAR = "barHpDisappear";
     const string MINIMAP_ANIM_APPEAR = "miniMapAppear";
@@ -26,7 +29,31 @@ public class StartMenuInput : MonoBehaviour
     [SerializeField] private GameObject _uiMiniMap;
     [SerializeField] private GameObject _uiSpellBar;
     [SerializeField] private GameObject _uiQuestPanel;
-    
+
+    [SerializeField] private Camera cam;
+    [SerializeField] private Transform target;
+    [SerializeField] private Vector3 originCamPos;
+    Vector3 _velocity = Vector3.zero;
+    float movespeed = 100f;
+    bool startMove = false;
+    [SerializeField] public GameObject imageGo;
+    [SerializeField] public GameObject imageGoMain;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    private void Start()
+    {
+        originCamPos = cam.transform.position;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.J))
@@ -51,9 +78,22 @@ public class StartMenuInput : MonoBehaviour
                 popupStartMenu.GetComponent<Animator>().Play(POPUPSTARTMENU_ANIM_APPEAR);
             }
         }
+
+        float distance = Vector3.Distance(target.position, cam.transform.position);
+
+        if (startMove == true && distance > 1f)
+        {
+            cam.transform.position = Vector3.SmoothDamp(cam.transform.position, target.position, ref _velocity, Time.deltaTime * movespeed);
+        }
+        else if(startMove == true && distance <= 1f)
+        {
+            UIEvent.NewGame();
+            cam.transform.position = originCamPos;
+            startMove = false;
+        }
     }
 
-    private void ShowUI()
+    public void ShowUI()
     {
         _uiHpBar.GetComponent<Animator>().Play(HPBAR_ANIM_APPEAR);
         _uiMiniMap.GetComponent<Animator>().Play(MINIMAP_ANIM_APPEAR);
@@ -69,27 +109,49 @@ public class StartMenuInput : MonoBehaviour
         _uiQuestPanel.GetComponent<Animator>().Play(QUEST_ANIM_DISAPPEAR);
     }
 
-    public void StartGame()
-    {
-        StartCoroutine(GameOn());
-    }
-
     public void Options()
     {
-        //popupStartMenu.GetComponent<Animator>().Play(POPUPSTARTMENU_ANIM_DISAPPEAR);
-        //settingPanel.GetComponent<Animator>().Play(POPUPSTARTMENU_ANIM_DISAPPEAR);
         settingPanel.SetActive(!settingPanel.activeSelf);
+        LoadManager.instance.SaveData();
     }
 
-    private IEnumerator GameOn()
+    private void HideOptions()
     {
-        yield return new WaitForSeconds(0.5f);
-        startMenu.SetActive(!startMenu.activeSelf);
-        ShowUI();
+        settingPanel.SetActive(false);
+        LoadManager.instance.SaveData();
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void NewGame()
+    {
+        HideOptions();
+        if (startMove == false)
+        {
+            startMove = true;
+        }
+        imageGo.GetComponent<Animator>().Play("FadeIn");
+    }
+
+    public void ContinueGame()
+    {
+        HideOptions();
+
+        imageGo.GetComponent<Animator>().Play("FadeIn");
+        StartCoroutine(NewGameFadeIn()); 
+    }
+
+    private IEnumerator NewGameFadeIn()
+    {
+        yield return new WaitForSeconds(4f);
+        //imageGo.GetComponent<Animator>().Play("FadeOut");
+        ShowUI();
+        imageGoMain.GetComponent<Animator>().Play("FadeOut");
+
+        yield return new WaitForSeconds(0.1f);
+        startMenu.SetActive(false);
+        BGMController.Instance.PlaySound(BGMController.Music.Ocean);
     }
 }

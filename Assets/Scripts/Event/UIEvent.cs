@@ -25,6 +25,14 @@ public class UIEvent : MonoBehaviour
     public delegate void AddNewQuest();
     public static event AddNewQuest OnAddNewQuest;
 
+    public delegate void NewClass();
+    public static event NewClass OnAddNewClass;
+
+    public static void NewGame()
+    {
+        if (OnAddNewClass != null)
+            OnAddNewClass();
+    }
     public static void AcceptQuest()
     {
         if (OnAddNewQuest != null)

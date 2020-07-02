@@ -11,6 +11,7 @@ TagManager:
   - NPC
   - DarkArea
   - Loot
+  - Image
   layers:
   - Default
   - TransparentFX
