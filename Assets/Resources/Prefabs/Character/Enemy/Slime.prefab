@@ -268,6 +268,8 @@ MonoBehaviour:
     type: 3}
   lootDrops:
   - {fileID: 6887325856931523279, guid: 954a1b84171ccc74a9954571753625ec, type: 3}
+  expFollow: {fileID: 8489837582041108299, guid: fe3c30e1f27d7dd4ebfe9c7fa1ab0e53,
+    type: 3}
   floatingText: {fileID: 6633212583109344977, guid: 6b479c556bf1d274abd69ea135fcd556,
     type: 3}
 --- !u!1 &9207773437999248356

@@ -13,6 +13,9 @@ public class LevelUpSystem : MonoBehaviour
     private float fillAmount;
     public float reverseFillAmount = 0;
 
+    [SerializeField] private GameObject levelUpVFX;
+    [SerializeField] private Transform levelUpVFXPos;
+
     [SerializeField] LevelWindow levelWindow;
     private void Awake()
     {
@@ -42,6 +45,10 @@ public class LevelUpSystem : MonoBehaviour
         {
             currentLevel = temp_cur_level;
             GetComponent<PlayerStats>().LevelUp();
+
+            Instantiate(levelUpVFX, levelUpVFXPos.position, Quaternion.identity);
+
+            SoundManager.PlaySound(SoundManager.Sound.PlayerLevelUp);
         }
 
         xpForNextLevel = baseXp * currentLevel * currentLevel;

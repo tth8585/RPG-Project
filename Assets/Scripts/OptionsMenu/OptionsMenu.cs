@@ -13,6 +13,7 @@ public class OptionsMenu : MonoBehaviour
     private Resolution[] resolutions;
     [SerializeField] private Dropdown resolutionDropDown;
     //[SerializeField] private GameObject btnQuit;
+    [SerializeField] Text testText;
     private void Awake()
     {
         handSlider.OnValueChanged += HandSlider_OnValueChanged;
@@ -34,25 +35,23 @@ public class OptionsMenu : MonoBehaviour
 
         List<string> options = new List<string>();
         int currentIndex = 0;
-        for (int i=0;i<resolutions.Length;i++)
+        for (int i = 0; i < resolutions.Length ; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
-            if(resolutions[i].width == Screen.currentResolution.width&& resolutions[i].height == Screen.currentResolution.height)
+
+            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
             {
                 currentIndex = i;
             }
         }
+
+        //Debug.Log(currentIndex);
         resolutionDropDown.AddOptions(options);
         resolutionDropDown.value = currentIndex;
         resolutionDropDown.RefreshShownValue();
 
-        //btnQuit.GetComponent<UI_Button>().ClickFunc = () => 
-        //{ 
-        //    Debug.Log("click");
-        //    Loader.Load(Loader.Scene.StartMenu);
-        //};
-        //btnQuit.GetComponent<UI_Button>().AddButtonSounds();
+        testText.text = currentIndex.ToString();
     }
     public void SetSize(int sizeIndex)
     {

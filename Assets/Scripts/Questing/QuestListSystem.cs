@@ -15,9 +15,10 @@ public class QuestListSystem : MonoBehaviour
     const string SYS_ONE = "(";
     const string SYS_TWO = " /";
     const string SYS_THREE = ")";
+    const string SYS_BLANK = "";
     private void Awake()
     {
-        questPanel.SetActive(false);
+        //questPanel.SetActive(false);
 
         if (Instance != null && Instance != this)
         {
@@ -31,6 +32,7 @@ public class QuestListSystem : MonoBehaviour
     private void Start()
     {
         UIEvent.OnAddNewQuest += AddQuest;
+        CheckQuestCurrent();
     }
 
     void AddQuest()
@@ -40,12 +42,12 @@ public class QuestListSystem : MonoBehaviour
         questName.text = quest.QuestName;
         questDiscription.text = quest.Description;
         questGoal.text = "(" + quest.Goals[0].CurrentAmount + " /" + quest.Goals[0].RequiredAmount + ")";
-        questPanel.SetActive(true);
+        //questPanel.SetActive(true);
     }
 
     public void HidePanel()
     {
-        questPanel.SetActive(false);
+        //questPanel.SetActive(false);
     }
 
     public void UpdateUI(bool completed)
@@ -58,6 +60,18 @@ public class QuestListSystem : MonoBehaviour
         else
         {
             questGoal.text = SYS_ONE + quest.Goals[0].CurrentAmount + SYS_TWO + quest.Goals[0].RequiredAmount + SYS_THREE;
+        }
+    }
+
+    public void CheckQuestCurrent()
+    {
+        Quest currentQuest = GetComponent<Quest>();
+
+        if(currentQuest == null)
+        {
+            questName.text = SYS_BLANK;
+            questDiscription.text = SYS_BLANK;
+            questGoal.text = SYS_BLANK;
         }
     }
 }

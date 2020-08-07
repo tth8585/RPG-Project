@@ -10,6 +10,8 @@ public enum RoleType
     BASE_STR_AGI,
     BASE_STR_INT,
     BASE_INT_AGI,
+
+    BASE_CENTER,
 }
 [CreateAssetMenu(menuName = "Character/Role Player")]
 public class RoleStat : ScriptableObject

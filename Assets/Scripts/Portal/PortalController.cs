@@ -10,6 +10,7 @@ public class PortalController : MonoBehaviour
     {
         if(other.transform.tag == "Player")
         {
+            SoundManager.PlaySound(SoundManager.Sound.Teleport);
             player.GetComponent<MMO_Player_movement>().enabled = false;
             player.position = outPos.position;
             StartCoroutine(TurnOn());

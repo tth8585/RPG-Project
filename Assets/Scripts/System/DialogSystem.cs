@@ -17,6 +17,8 @@ public class DialogSystem : MonoBehaviour
     Text dialogueText, nameText;
     int dialogueIndex;
     Image imageNPC;
+
+    public RectTransform fKeyHint;
     private void Awake()
     {
         contiBtn = dialoguePanel.transform.Find("Continue").GetComponent<Button>();

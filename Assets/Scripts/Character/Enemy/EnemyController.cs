@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour, IEnemy
     public DropTable dropTable;
     public ItemPickup itemPickup;
     public List<LootDrop> lootDrops;
+    public ExpFollow expFollow;
     //private Inventory inventory;
     public string enemyName { get { return enemyStats.enemyName; } }
 
@@ -95,6 +96,14 @@ public class EnemyController : MonoBehaviour, IEnemy
             instance.itemDrop = item;
             //instance.inventory = inventory;
             instance.GetComponent<Renderer>().material = instance.material;
+
+            int random = Random.Range(2, 5);
+            for(int i = 0; i < random; i++)
+            {
+                Vector3 expPos = new Vector3(transform.position.x+Random.Range(0,0.5f), transform.position.y+Random.Range(0, 0.5f), transform.position.z+Random.Range(0, 0.5f));
+                ExpFollow instanceExp = Instantiate(expFollow, expPos, Quaternion.identity);
+                instanceExp.target = target.transform;
+            }
         }
     }
 

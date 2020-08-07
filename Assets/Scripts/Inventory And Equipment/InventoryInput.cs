@@ -14,8 +14,10 @@ public class InventoryInput : MonoBehaviour
     [SerializeField] PlayerController playerController;
 
     [SerializeField] KeyCode[] toggleMenu;
-    [SerializeField] KeyCode toggleTestDark;
-    //[SerializeField] KeyCode[] toggleEquipmentKeys;
+    //[SerializeField] KeyCode toggleTestDark;
+    [SerializeField] KeyCode toggleInventoryKey;
+    [SerializeField] KeyCode toggleCharacterDetailKey;
+    [SerializeField] KeyCode toggleEquipmentKey;
 
     [SerializeField] GameObject testDark;
 
@@ -32,6 +34,7 @@ public class InventoryInput : MonoBehaviour
         {
             if (Input.GetKeyDown(toggleMenu[i]))
             {
+                //SoundManager.PlaySound(SoundManager.Sound.OpenStash);
                 menuShow = !menuShow;
                 animMenu.SetBool("isShow", menuShow);
                 CheckNeedCursor();
@@ -39,8 +42,28 @@ public class InventoryInput : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(toggleInventoryKey))
+        {
+            ToggleInventory();
+        }
+
+        if (Input.GetKeyDown(toggleCharacterDetailKey))
+        {
+            ToggleCharacterDetail();
+        }
+
+        if (Input.GetKeyDown(toggleEquipmentKey))
+        {
+            ToggleEquipment();
+        }
+
         if (Input.GetKeyDown(closeAll))
         {
+            //SoundManager.PlaySound(SoundManager.Sound.OpenStash);
+            if (inventoryGameObject.activeSelf || characterDetailGameObject.activeSelf || equipmentGameObject.activeSelf)
+            {
+                SoundManager.PlaySound(SoundManager.Sound.OpenStash);
+            }
             inventoryGameObject.SetActive(false);
             characterDetailGameObject.SetActive(false);
             equipmentGameObject.SetActive(false);
@@ -86,18 +109,21 @@ public class InventoryInput : MonoBehaviour
 
     public void ToggleInventory()
     {
+        SoundManager.PlaySound(SoundManager.Sound.OpenStash);
         inventoryGameObject.SetActive(!inventoryGameObject.activeSelf);
         if(inventoryGameObject.activeSelf == true) inventoryGameObject.GetComponent<RectTransform>().SetAsLastSibling();
         CheckNeedCursor();
     }
     public void ToggleCharacterDetail()
     {
+        SoundManager.PlaySound(SoundManager.Sound.OpenStash);
         characterDetailGameObject.SetActive(!characterDetailGameObject.activeSelf);
         if (characterDetailGameObject.activeSelf == true) characterDetailGameObject.GetComponent<RectTransform>().SetAsLastSibling();
         CheckNeedCursor();
     }
     public void ToggleEquipment()
     {
+        SoundManager.PlaySound(SoundManager.Sound.OpenStash);
         equipmentGameObject.SetActive(!equipmentGameObject.activeSelf);
         if (equipmentGameObject.activeSelf == true) equipmentGameObject.GetComponent<RectTransform>().SetAsLastSibling();
         CheckNeedCursor();

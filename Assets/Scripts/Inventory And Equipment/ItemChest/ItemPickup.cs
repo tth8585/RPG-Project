@@ -11,8 +11,16 @@ public class ItemPickup : Interactable
     private float timeToBlink = 3;
     private float timer = 0;
 
+    [SerializeField] KeyCode lootKeycode;
+    private bool isInRange;
+    RectTransform fKeyHint;
+
     private void Update()
     {
+        if(fKeyHint == null)
+        {
+            fKeyHint = DialogSystem.Instance.fKeyHint;
+        }
         currentTime -= Time.deltaTime;
         
         if (currentTime <= timeToBlink)
@@ -32,11 +40,18 @@ public class ItemPickup : Interactable
         {
             Destroy(gameObject);
         }
+
+        if (isInRange && Input.GetKeyDown(lootKeycode))
+        {
+            Interact();
+        }
     }
     public override void Interact()
     {
+        SoundManager.PlaySound(SoundManager.Sound.ItemPick);
         AddItem();
         Debug.Log("loot");
+        fKeyHint.gameObject.SetActive(false);
     }
 
     private void AddItem()
@@ -57,5 +72,31 @@ public class ItemPickup : Interactable
     private void ItemBlink2()
     {
         gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        CheckCollision(other.gameObject, true);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        CheckCollision(other.gameObject, false);
+    }
+    private void CheckCollision(GameObject gameObject, bool state)
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            isInRange = state;
+            if (isInRange)
+            {
+                //show hint
+                fKeyHint.gameObject.SetActive(true);// = true;
+            }
+            else
+            {
+                fKeyHint.gameObject.SetActive(false);
+            }
+        }
     }
 }

@@ -15,6 +15,16 @@ public static class SoundManager
         Treasure,
         ButtonOver,
         ButtonClick,
+        PlayerLevelUp,
+        GemUsing,
+        OpenStash,
+        Spell1,
+        Spell2,
+        Spell3,
+        Spell4,
+        Teleport,
+        ItemPick,
+        HelpMe,
     }
     private static Dictionary<Sound, float> soundTimeDictionary;
     private static GameObject oneShotGameObject;

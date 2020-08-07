@@ -28,6 +28,15 @@ public class UIEvent : MonoBehaviour
     public delegate void NewClass();
     public static event NewClass OnAddNewClass;
 
+    public delegate void ShowHint();
+    public static event ShowHint OnShowHint;
+
+    public static void ShowHintFKey()
+    {
+        if (OnShowHint != null)
+            OnShowHint();
+    }
+
     public static void NewGame()
     {
         if (OnAddNewClass != null)

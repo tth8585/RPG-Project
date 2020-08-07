@@ -12,13 +12,23 @@ public class ExpFollow : MonoBehaviour
 
     public void StartFollowing()
     {
-        isFollowing = true;
+        float randomTime = Random.Range(0f, 0.5f);
+        StartCoroutine(WaitTime(randomTime));
     }
     private void Update()
     {
         if (isFollowing)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, target.position, ref _velocity, Time.deltaTime * Random.Range(minMod, maxMod));
+            if(target != null)
+            {
+                transform.position = Vector3.SmoothDamp(transform.position, target.position, ref _velocity, Time.deltaTime * Random.Range(minMod, maxMod));
+            }
         }
+    }
+
+    private IEnumerator WaitTime(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        isFollowing = true;
     }
 }

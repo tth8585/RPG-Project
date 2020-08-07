@@ -185,19 +185,23 @@ public class PlayerSpellController : MonoBehaviour
         {
             case SpellAbility.TargetUnit:
                 PlayerAnimationController.Instance.AnimateSpellTarget();
+                SoundManager.PlaySound(SoundManager.Sound.Spell1);
                 break;
             case SpellAbility.TargetPoint:
                 break;
             case SpellAbility.TargetArea:
                 PlayerAnimationController.Instance.AnimateSpellArea();
+                SoundManager.PlaySound(SoundManager.Sound.Spell3);
                 break;
             case SpellAbility.NoTarget:
                 PlayerAnimationController.Instance.AnimateSpellBuff();
+                SoundManager.PlaySound(SoundManager.Sound.Spell2);
                 break;
             case SpellAbility.Toggle:
                 break;
             case SpellAbility.Passive:
                 PlayerAnimationController.Instance.AnimateSpellAura();
+                SoundManager.PlaySound(SoundManager.Sound.Spell4);
                 break;
             default:
                 break;

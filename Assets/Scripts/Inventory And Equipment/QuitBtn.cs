@@ -7,4 +7,11 @@ public class QuitBtn : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void SaveSetting()
+    {
+        //LoadManager.instance.SaveData();
+        gameObject.SetActive(false);
+        LoadManager.instance.SetVolume();
+    }
 }

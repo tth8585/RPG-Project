@@ -22,23 +22,7 @@ public class LoadManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    private void Start()
-    {
-        LoadData();
-        LoadItemData(c);
-    }
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.K))
-        //{
-        //    SaveData();
-        //}
 
-        //if (Input.GetKeyDown(KeyCode.L))
-        //{
-        //    LoadData();
-        //}
-    }
     public void LoadData()
     {
         
@@ -88,7 +72,7 @@ public class LoadManager : MonoBehaviour
         data.level = c.transform.GetComponent<LevelUpSystem>().currentLevel;
         data.exp = c.transform.GetComponent<LevelUpSystem>().currentXP;
 
-        data.volumeSize = OptionsMenu.Instance.GetVolume();
+        SetVolume();
     }
     private void GetData()
     {
@@ -98,21 +82,13 @@ public class LoadManager : MonoBehaviour
         c.transform.GetComponent<LevelUpSystem>().currentXP = data.exp;
         c.transform.GetComponent<LevelUpSystem>().AddXP(0);
 
-        //if(OptionsMenu.Instance == null)
-        //{
-        //    StartCoroutine(GetSound());
-        //}
-        //else
-        //{
-           
-        //}
         OptionsMenu.Instance.SetVolume(data.volumeSize);
+        StatPanel.Instance.UpdateStatValue();
     }
 
-    private IEnumerator GetSound()
+    public void SetVolume()
     {
-        yield return new WaitForSeconds(1f);
-        
+        data.volumeSize = OptionsMenu.Instance.GetVolume();
     }
 }
 [System.Serializable]

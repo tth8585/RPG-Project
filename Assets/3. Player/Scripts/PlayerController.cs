@@ -383,6 +383,7 @@ public class PlayerController : MonoBehaviour
             if(craftingRecipe[i].CanCraft(usingSlot, slotItem))
             {
                 craftingRecipe[i].Craft(inventory, usingSlot, slotItem);
+                SoundManager.PlaySound(SoundManager.Sound.GemUsing);
                 break;
             }
         }
