@@ -4,7 +4,7 @@ public class LevelUpSystem : MonoBehaviour
 {
     public int currentLevel = 1;
     public int baseXp = 20;
-    public int currentXP;
+    public int currentXP=0;
 
     private int xpForNextLevel;
     private int xpDifferenceToNextLevel;
@@ -16,7 +16,7 @@ public class LevelUpSystem : MonoBehaviour
     [SerializeField] private GameObject levelUpVFX;
     [SerializeField] private Transform levelUpVFXPos;
 
-    [SerializeField] LevelWindow levelWindow;
+   // [SerializeField] LevelWindow levelWindow;
     private void Awake()
     {
         //SetValue();
@@ -24,13 +24,9 @@ public class LevelUpSystem : MonoBehaviour
     private void Start()
     {
         CombatEvent.OnEnemyDeath += EnemytoExperience;
+        CombatEvent.OnQuestComplete += QuesttoExperience;
     }
-    void SetValue()
-    {
-        //currentLevel = 1;
-        //reverseFillAmount = 0;
-        //levelWindow.SetData(currentLevel, reverseFillAmount);
-    }
+    
     public void AddXP(int amount)
     {
         CalculateLevel(amount);
@@ -39,14 +35,20 @@ public class LevelUpSystem : MonoBehaviour
     void CalculateLevel(int amout)
     {
         currentXP += amout;
+        
         int temp_cur_level = (int)Mathf.Sqrt(currentXP / baseXp) +1;
-
+        
         if (currentLevel != temp_cur_level && temp_cur_level < 20)
         {
             currentLevel = temp_cur_level;
-            GetComponent<PlayerStats>().LevelUp();
-
-            Instantiate(levelUpVFX, levelUpVFXPos.position, Quaternion.identity);
+            PlayerStats.Instance.LevelUp();
+            
+            if(levelUpVFX!=null&& levelUpVFXPos != null)
+            {
+                Instantiate(levelUpVFX, levelUpVFXPos.position, Quaternion.identity);
+            }
+            
+            SpellPlusSystem.Instance.OnLevelUp(currentLevel);
 
             SoundManager.PlaySound(SoundManager.Sound.PlayerLevelUp);
         }
@@ -59,10 +61,16 @@ public class LevelUpSystem : MonoBehaviour
         reverseFillAmount = 1 - fillAmount;
 
         UIEvent.PlayerLevelChange(currentLevel,reverseFillAmount);
+        //LevelWindow.Instance.UpdateLevelUI(currentLevel,reverseFillAmount);
     }
 
     public void EnemytoExperience(IEnemy enemy)
     {
         AddXP(enemy.Experience);
+    }
+
+    public void QuesttoExperience(int questExp)
+    {
+        AddXP(questExp);
     }
 }

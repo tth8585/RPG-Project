@@ -17,6 +17,8 @@ public class CanvasSystem : MonoBehaviour
     private void Start()
     {
         UIEvent.OnAddNewClass += NewClass;
+
+        InitMainGame();
     }
     private void NewClass()
     {
@@ -38,32 +40,40 @@ public class CanvasSystem : MonoBehaviour
 
     public void NextToMainScene()
     {
-        imageGoSelectedClass.GetComponent<Animator>().Play("FadeIn");
-        StartCoroutine(NewGameFadeInFromSelected());
+        Loader.Load(Loader.Scene.Main);
+        //imageGoSelectedClass.GetComponent<Animator>().Play("FadeIn");
+        //StartCoroutine(NewGameFadeInFromSelected());
     }
-    private IEnumerator NewGameFadeInFromSelected()
+    //private IEnumerator NewGameFadeInFromSelected()
+    //{
+    //    //yield return new WaitForSeconds(4f);
+    //    ////imageGo.GetComponent<Animator>().Play("FadeOut");
+    //    //StartMenuInput.Instance.ShowUI();
+    //    //StartMenuInput.Instance.imageGoMain.GetComponent<Animator>().Play("FadeOut");
+
+    //    //yield return new WaitForSeconds(0.1f);
+    //    //selectClassOb.SetActive(false);
+    //    //camChooseClass.gameObject.SetActive(false);
+
+    //    //LoadData(playerController);
+    //    //LoadSound();
+    //}
+
+    private void InitMainGame()
     {
-        yield return new WaitForSeconds(4f);
-        //imageGo.GetComponent<Animator>().Play("FadeOut");
-        StartMenuInput.Instance.ShowUI();
-        StartMenuInput.Instance.imageGoMain.GetComponent<Animator>().Play("FadeOut");
-
-        yield return new WaitForSeconds(0.1f);
-        selectClassOb.SetActive(false);
-        camChooseClass.gameObject.SetActive(false);
-
-        LoadData(playerController);
-        LoadSound();
+        //StartMenuInput.Instance.ShowUI();
+        //LoadData(playerController);
+        //LoadSound();
     }
 
     void LoadData(PlayerController c)
     {
-        LoadManager.instance.LoadData();
-        LoadManager.instance.LoadItemData(c);
+        //LoadManager.instance.LoadData();
+        //LoadManager.instance.LoadItemData(c);
     }
 
     void LoadSound()
     {
-        BGMController.Instance.PlaySound(BGMController.Music.Ocean);
+        //BGMController.Instance.PlaySound(BGMController.Music.Ocean);
     }
 }

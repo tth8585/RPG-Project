@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: BASE_AGI
   m_EditorClassIdentifier: 
   nameRole: BASE_AGI
-  initialSTR: 5
-  initialAGI: 20
-  initialINT: 5
+  initialSTR: 15
+  initialAGI: 22
+  initialINT: 19
   initialHP: 200
   initialHpRegen: 0
-  initialMP: 100
+  initialMP: 75
   initialMpRegen: 0
-  initialArmor: 0
-  initialDamage: 0
-  gainPerLevelSTR: 1
-  gainPerLevelAGI: 1
-  gainPerLevelINT: 1
+  initialArmor: 7
+  initialDamage: 29
+  gainPerLevelSTR: 1.7
+  gainPerLevelAGI: 4.8
+  gainPerLevelINT: 1.6
   magicResistance: 0.25
-  movementSpeed: 275
-  attackSpeed: 115
+  movementSpeed: 315
+  attackSpeed: 100
   damageBlock: 0
   critChance: 0
   critMulty: 0

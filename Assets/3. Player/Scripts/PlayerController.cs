@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] DropItem dropItemArea;
     private PlayerWeaponController playerWeaponController;
 
+    [SerializeField] GameObject playerDieUI;
+
     private ItemSlot draggedSlot;
 
     public bool isDead;
@@ -234,6 +236,7 @@ public class PlayerController : MonoBehaviour
         else if (dropItemSlot.CanReceiveItem(draggedSlot.item) && draggedSlot.CanReceiveItem(dropItemSlot.item))
         {
             SwapItems(dropItemSlot);
+            SoundManager.PlaySound(SoundManager.Sound.ItemPick);
         }
     }
 
@@ -250,6 +253,7 @@ public class PlayerController : MonoBehaviour
 
     private void DestroyItemInSlot(BaseItemSlot baseItemSlot)
     {
+        SoundManager.PlaySound(SoundManager.Sound.ItemPick);
         baseItemSlot.item.Destroy();
         baseItemSlot.item = null;
     }
@@ -461,6 +465,7 @@ public class PlayerController : MonoBehaviour
         }
 
         PlayerAnimationController.Instance.AnimateHurt();
+        SoundManager.PlaySound(SoundManager.Sound.Playerhurt);
 
         amount = CalculateDamageRecive(amount, isMagicDame);
         
@@ -482,6 +487,22 @@ public class PlayerController : MonoBehaviour
         PlayerAnimationController.Instance.AnimateDeath();
         GetComponent<MMO_Player_movement>().isDead = isDead;
         isImmortal = true;
+
+        LoadManager.instance.LoadDefaultData();
+        playerDieUI.SetActive(true);
+        BGMController.Instance.PlaySound(BGMController.Music.Death);
+        //StartCoroutine(BackToStartMenu());
+    }
+
+    public void SetPlayerDie()
+    {
+        Die();
+    }
+
+    private IEnumerator BackToStartMenu()
+    {
+        yield return new WaitForSeconds(5f);
+        Loader.Load(Loader.Scene.StartMenu);
     }
 
     private int CalculateDamageRecive(int amount, bool isMagicDame)

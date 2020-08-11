@@ -28,13 +28,19 @@ public class UI_HP : MonoBehaviour
     {
         newFillAmount = (float)(hp / maxHp);
 
-        this.text.text = ((int)hp).ToString()+"/"+ ((int)maxHp).ToString();
-        this.image.fillAmount = newFillAmount;
-        imageLip.fillAmount = image.fillAmount + 0.01f;
+        if (this.text != null)
+        {
+            this.text.text = ((int)hp).ToString() + "/" + ((int)maxHp).ToString();
+        }
 
-        //if (newFillAmount > this.image.fillAmount)
-        //{
-        //    this.image.fillAmount = newFillAmount;
-        //}
+        if (this.image != null)
+        {
+            this.image.fillAmount = newFillAmount;
+        }
+
+        if (this.imageLip != null)
+        {
+            imageLip.fillAmount = image.fillAmount + 0.01f;
+        }
     }
 }

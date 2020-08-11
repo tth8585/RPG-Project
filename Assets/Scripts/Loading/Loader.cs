@@ -8,9 +8,10 @@ public static class Loader
 {
     private class LoadingMono : MonoBehaviour { }
     public enum Scene {
-        SettingMenu,
         StartMenu,
         LoadingScene,
+        Main,
+        SelectScene,
     }
     private static Action onLoaderCallback;
     private static AsyncOperation loadingAsyncOperation;

@@ -16,7 +16,7 @@ public class CollectionGoal : Goal
     public override void Init()
     {
         base.Init();
-        //CombatEvent.OnEnemyDeath += ItemPickedUp;
+        CombatEvent.OnPickupItem += ItemPickedUp;
     }
 
     void ItemPickedUp(Item item)

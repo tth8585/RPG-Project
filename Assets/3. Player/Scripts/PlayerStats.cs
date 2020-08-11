@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class PlayerStats : MonoBehaviour
 {
+    public static PlayerStats Instance { get; set; }
+
     public float currentHP;
     public float currentMP;
 
@@ -37,6 +39,15 @@ public class PlayerStats : MonoBehaviour
    
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+
         PlayerRoleAtt = roleDataBase.GetRoleReference(playerRoleType.ToString());
     }
     private void Start()
@@ -137,6 +148,7 @@ public class PlayerStats : MonoBehaviour
     public void LevelUp()
     {
         GetStat();
+        StatPanel.Instance.UpdateStatValue();
     }
     private float CalculateHPRegen()
     {

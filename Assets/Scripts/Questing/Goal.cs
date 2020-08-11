@@ -1,4 +1,6 @@
 ﻿
+using System.Numerics;
+
 public class Goal
 {
     public Quest Quest { get; set; }
@@ -6,6 +8,8 @@ public class Goal
     public bool Completed { get; set; }
     public int CurrentAmount { get; set; }
     public int RequiredAmount { get; set; }
+
+    //public Vector3 posGoal { get; set; }
 
     public virtual void Init()
     {
@@ -17,7 +21,7 @@ public class Goal
         {
             Complete();
         }
-        QuestListSystem.Instance.UpdateUI(Completed);
+        QuestListSystem.Instance.UpdateUI(Quest,Completed);
     }
 
     public void Complete()

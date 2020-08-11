@@ -22,7 +22,7 @@ public class UIEvent : MonoBehaviour
     public delegate void PlayerDragSomething(bool isDragging);
     public static event PlayerDragSomething OnPlayerDragging;
 
-    public delegate void AddNewQuest();
+    public delegate void AddNewQuest(Quest quest);
     public static event AddNewQuest OnAddNewQuest;
 
     public delegate void NewClass();
@@ -42,10 +42,10 @@ public class UIEvent : MonoBehaviour
         if (OnAddNewClass != null)
             OnAddNewClass();
     }
-    public static void AcceptQuest()
+    public static void AcceptQuest(Quest quest)
     {
         if (OnAddNewQuest != null)
-            OnAddNewQuest();
+            OnAddNewQuest(quest);
     }
     public static void HealthChanged(float currentHealth, float maxHealth)
     {
@@ -59,11 +59,11 @@ public class UIEvent : MonoBehaviour
             OnPlayerManaChanged(currentMana, maxMana);
     }
 
-    public static void PlayerLevelChange(int currentExp, float fillAmount)
+    public static void PlayerLevelChange(int currentLvl, float fillAmount)
     {
         if (OnPlayerLevelChange != null)
         {
-            OnPlayerLevelChange(currentExp,fillAmount);
+            OnPlayerLevelChange(currentLvl, fillAmount);
         }
     }
 

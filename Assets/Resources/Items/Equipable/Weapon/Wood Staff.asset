@@ -21,10 +21,11 @@ MonoBehaviour:
   equipmentType: 0
   HP: 50
   MP: 0
-  STR: 0
-  INT: 0
+  STR: 5
+  INT: 6
   AGI: 0
-  ItemRank: 0
+  hpRegen: 1.1
+  mpRegen: 0
   weaponType: 5
   minDamage: 9
   maxDamage: 19

@@ -16,11 +16,11 @@ MonoBehaviour:
   icon: {fileID: -7442647093055201042, guid: a6aaad145bed5144898857494999d265, type: 3}
   enemyType: 0
   baseExp: 5
-  HP: 100
+  HP: 300
   MP: 20
-  Armor: 0
+  Armor: 2
   MovementSpeed: 5
   AttackSpeed: 0.3
-  minDamage: 37
+  minDamage: 21
   maxDamage: 40
   rangeDetected: 5

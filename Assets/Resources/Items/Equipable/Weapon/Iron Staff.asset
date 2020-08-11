@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1876e60b344331048b666fe163e5e2cf, type: 3}
+  m_Name: Iron Staff
+  m_EditorClassIdentifier: 
+  id: e52b34907a36d2c4eb3a2e94710c7608
+  itemName: Iron Staff
+  maximumStack: 1
+  iconItem: {fileID: 6108136309404281946, guid: 4dfa4e28cc782674292bdffb745886b1,
+    type: 3}
+  itemRarity: 0
+  equipmentType: 0
+  HP: 10
+  MP: 30
+  STR: 7
+  INT: 10
+  AGI: 2
+  hpRegen: 0
+  mpRegen: 0
+  weaponType: 5
+  minDamage: 9
+  maxDamage: 19
+  minBaseCritChane: 0.061
+  maxBaseCritChane: 0.066

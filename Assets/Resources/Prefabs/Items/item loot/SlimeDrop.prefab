@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5823243497357763515}
   - component: {fileID: 6887325856931523279}
   m_Layer: 0
-  m_Name: LootDropSlime
+  m_Name: SlimeDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,5 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803a8fba8fa05274ab4e85e32846aad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 10b7e496c1c6e3c47b319f6fd57ec7c8, type: 2}
-  weight: 100
+  item: {fileID: 11400000, guid: 754d5ddf24aeb5a4e9ac9ce45cb9ae34, type: 2}
+  weight: 40

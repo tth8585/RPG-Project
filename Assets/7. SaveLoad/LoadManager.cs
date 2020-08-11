@@ -25,7 +25,6 @@ public class LoadManager : MonoBehaviour
 
     public void LoadData()
     {
-        
         string filePath = Application.persistentDataPath + "/" + dataFile;
         BinaryFormatter bf = new BinaryFormatter();
         if (File.Exists(filePath))
@@ -34,6 +33,11 @@ public class LoadManager : MonoBehaviour
             Data loaded = (Data)bf.Deserialize(file);
             data = loaded;
             file.Close();
+        }
+        else
+        {
+            //load lan dau tien
+            LoadDefaultData();
         }
 
         GetData();
@@ -76,6 +80,7 @@ public class LoadManager : MonoBehaviour
     }
     private void GetData()
     {
+        Debug.Log(data.pos.toVector());
         c.transform.position = data.pos.toVector();
         
         c.transform.GetComponent<LevelUpSystem>().currentLevel = data.level;
@@ -89,6 +94,35 @@ public class LoadManager : MonoBehaviour
     public void SetVolume()
     {
         data.volumeSize = OptionsMenu.Instance.GetVolume();
+    }
+
+    public void LoadDefaultData()
+    {
+        //string filePath = Application.persistentDataPath + "/" + dataFile;
+        //BinaryFormatter bf = new BinaryFormatter();
+        //FileStream file = File.Create(filePath);
+        //bf.Serialize(file, data);
+        //file.Close();
+        string filePath = Application.persistentDataPath + "/" + dataFile;
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+            //UnityEditor.AssetDatabase.Refresh();
+        }
+
+        data.pos.x = -294.3f;
+        data.pos.y = 6.58f;
+        data.pos.z = 45.5f;
+        data.level = 1;
+        data.exp = 0;
+        SetVolume();
+
+        ItemSaveManager.Instance.ClearItemData();
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(filePath);
+        bf.Serialize(file, data);
+        file.Close();
     }
 }
 [System.Serializable]

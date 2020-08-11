@@ -7,15 +7,9 @@ public class QuestListSystem : MonoBehaviour
     public static QuestListSystem Instance { get; set; }
 
     [SerializeField] GameObject questPanel;
-    [SerializeField] Text questName;
-    [SerializeField] Text questDiscription;
-    [SerializeField] Text questGoal;
-    Quest quest;
-    const string COMPLETED_STRING = "(Completed)";
-    const string SYS_ONE = "(";
-    const string SYS_TWO = " /";
-    const string SYS_THREE = ")";
-    const string SYS_BLANK = "";
+    [SerializeField] GameObject questPref;
+    [SerializeField] GameObject contentQ;
+   
     private void Awake()
     {
         //questPanel.SetActive(false);
@@ -32,17 +26,16 @@ public class QuestListSystem : MonoBehaviour
     private void Start()
     {
         UIEvent.OnAddNewQuest += AddQuest;
-        CheckQuestCurrent();
     }
 
-    void AddQuest()
+    void AddQuest(Quest quest)
     {
-        quest = GetComponent<Quest>();
-
-        questName.text = quest.QuestName;
-        questDiscription.text = quest.Description;
-        questGoal.text = "(" + quest.Goals[0].CurrentAmount + " /" + quest.Goals[0].RequiredAmount + ")";
-        //questPanel.SetActive(true);
+        if (contentQ != null)
+        {
+            GameObject questChild = Instantiate(questPref) as GameObject;
+            questChild.GetComponent<QuestContentController>().QuestInit(quest);
+            questChild.transform.SetParent(contentQ.transform, false);
+        }
     }
 
     public void HidePanel()
@@ -50,28 +43,87 @@ public class QuestListSystem : MonoBehaviour
         //questPanel.SetActive(false);
     }
 
-    public void UpdateUI(bool completed)
+    public void RemoveQuest(Quest quest)
     {
-        //Debug.Log(enemy.ID);
-        if (completed)
+        for (int i = contentQ.transform.childCount - 1; i >= 0; i--)
         {
-            questGoal.text = COMPLETED_STRING;
-        }
-        else
-        {
-            questGoal.text = SYS_ONE + quest.Goals[0].CurrentAmount + SYS_TWO + quest.Goals[0].RequiredAmount + SYS_THREE;
+            Transform obj = contentQ.transform.GetChild(i);
+            if(obj.GetComponent<QuestContentController>().questName.text == quest.QuestName)
+            {
+                Destroy(GetComponent(System.Type.GetType(quest.QuestType)));
+                Destroy(obj.gameObject);
+                CheckToogleUI(quest.QuestName, false, new Vector3(0, 0, 0));
+            }
         }
     }
 
-    public void CheckQuestCurrent()
+    public void UpdateUI(Quest questUp, bool completed)
     {
-        Quest currentQuest = GetComponent<Quest>();
-
-        if(currentQuest == null)
+        for(int i=0;i< contentQ.transform.childCount; i++)
         {
-            questName.text = SYS_BLANK;
-            questDiscription.text = SYS_BLANK;
-            questGoal.text = SYS_BLANK;
+            if(questUp.QuestName == contentQ.transform.GetChild(i).GetComponent<QuestContentController>().questName.text)
+            {
+                contentQ.transform.GetChild(i).GetComponent<QuestContentController>().QuestUpdateUI(questUp, completed);
+                break;
+            }
         }
+    }
+
+    public bool CheckQuestCurrent(Quest questCheck)
+    {
+        for (int i = contentQ.transform.childCount - 1; i >= 0; i--)
+        {
+            Transform obj = contentQ.transform.GetChild(i);
+
+            if (obj.GetComponent<QuestContentController>().questName.text == questCheck.QuestName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void CheckToogleUI(string questName,bool isOn, Vector3 goalPos)
+    {
+        //PointToQuest.Instance.OnOff(isOn);
+        //if (!isOn)
+        //{
+        //    return;
+        //}
+        //else
+        //{
+        //    PointToQuest.Instance.UpdateTarget(goalPos);
+        //}
+        if (isOn)
+        {
+            PointToQuest.Instance.UpdateTarget(goalPos);
+            for (int i = contentQ.transform.childCount - 1; i >= 0; i--)
+            {
+                Transform obj = contentQ.transform.GetChild(i);
+
+                if (obj.GetComponent<QuestContentController>().questName.text == questName)
+                {
+                    //obj.GetComponent<QuestContentController>().toggle.isOn = true;
+                }
+                else
+                {
+                    obj.GetComponent<QuestContentController>().toggle.isOn = false;
+                }
+            }
+        }
+        else
+        {
+            for (int i = contentQ.transform.childCount - 1; i >= 0; i--)
+            {
+                Transform obj = contentQ.transform.GetChild(i);
+
+                if (obj.GetComponent<QuestContentController>().toggle.isOn == true)
+                {
+                    return;
+                } 
+            }
+        }
+
+        PointToQuest.Instance.OnOff(isOn);
     }
 }

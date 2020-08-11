@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07abb2f79555ef045b2841bf70c396ae, type: 3}
+  m_Name: Herbal Grass
+  m_EditorClassIdentifier: 
+  id: 754d5ddf24aeb5a4e9ac9ce45cb9ae34
+  itemName: Herbal Grass
+  maximumStack: 5
+  iconItem: {fileID: -1346716354686486004, guid: a3d5ecc84c35a31448bd97da530e07d1,
+    type: 3}
+  itemRarity: 0
+  consumableType: 0
+  potionType: 0
+  effects:
+  - {fileID: 11400000, guid: 47483c86707e1384ea85c9526e23bba7, type: 2}

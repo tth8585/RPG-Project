@@ -33,12 +33,12 @@ public class Inventory : Itemcontainer
         }
     }
    
-    private void SetStartingItems()
+    public void SetStartingItems()
     {
         Clear();
         for(int i = 0; i < startingItems.Count; i++)
         {
-            if (i == 0||i==7||i==8)
+            if (i == 0||i==7||i==8||i==9)
             {
                 AddItem(startingItems[i].GetCopy());
             }

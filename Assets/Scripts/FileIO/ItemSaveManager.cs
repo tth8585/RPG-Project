@@ -129,4 +129,12 @@ public class ItemSaveManager : MonoBehaviour
 
         ItemSaveIO.SaveItems(saveData, fileName);
     }
+
+    public void ClearItemData()
+    {
+        ItemSlot[] itemSlots = { };
+        SaveItems(itemSlots, InventoryFileName);
+        SaveItems(itemSlots, EquipmentFileName);
+        SaveItems(itemSlots, StashFileName);
+    }
 }

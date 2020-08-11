@@ -27,4 +27,5 @@ MonoBehaviour:
   spellNumberTarget: 3
   spellCoolDown: 20
   currentSpellCoolDown: 0
-  manaCost: 50
+  manaCost: 90
+  spellLevel: 0

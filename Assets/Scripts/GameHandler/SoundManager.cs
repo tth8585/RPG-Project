@@ -25,6 +25,7 @@ public static class SoundManager
         Teleport,
         ItemPick,
         HelpMe,
+        Playerhurt,
     }
     private static Dictionary<Sound, float> soundTimeDictionary;
     private static GameObject oneShotGameObject;

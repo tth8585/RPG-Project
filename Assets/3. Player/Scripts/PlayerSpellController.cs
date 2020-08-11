@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerSpellController : MonoBehaviour
 {
     [SerializeField] private Spell[] listSpells;
-    [SerializeField] private Spell[] listCurrentSpells;
+    [SerializeField] public Spell[] listCurrentSpells;
     [SerializeField] private SpellPanel spellPanel;
     [SerializeField] GameObject auraGameObject;
     Vector3 cursorPos;
@@ -30,11 +30,21 @@ public class PlayerSpellController : MonoBehaviour
         character = GetComponent<PlayerController>();
 
         listCurrentSpells = new Spell[4];
+
         for(int i=0;i< listCurrentSpells.Length; i++)
         {
             if (i < listSpells.Length)
             {
                 listCurrentSpells[i] = listSpells[i];
+                
+                if (i == 0)
+                {
+                    listCurrentSpells[i].spellLevel = 1;
+                }
+                else
+                {
+                    listCurrentSpells[i].spellLevel = 0;
+                }
             }
         }
 
@@ -48,7 +58,7 @@ public class PlayerSpellController : MonoBehaviour
         if (Input.GetButtonDown("Spell1"))
         {
             CancelAreaSpell();
-            if (listCurrentSpells[0] != null)
+            if (listCurrentSpells[0] != null&& listCurrentSpells[0].spellLevel>0)
             {
                 _spell = listCurrentSpells[0];
                 CheckCanCast();
@@ -61,7 +71,7 @@ public class PlayerSpellController : MonoBehaviour
         if (Input.GetButtonDown("Spell2"))
         {
             CancelAreaSpell();
-            if (listCurrentSpells[1] != null)
+            if (listCurrentSpells[1] != null && listCurrentSpells[1].spellLevel > 0)
             {
                 _spell = listCurrentSpells[1];
                 CheckCanCast();
@@ -74,7 +84,7 @@ public class PlayerSpellController : MonoBehaviour
         if (Input.GetButtonDown("Spell3"))
         {
             CancelAreaSpell();
-            if (listCurrentSpells[2] != null)
+            if (listCurrentSpells[2] != null && listCurrentSpells[2].spellLevel > 0)
             {
                 _spell = listCurrentSpells[2];
                 CheckCanCast();
@@ -87,7 +97,7 @@ public class PlayerSpellController : MonoBehaviour
         if (Input.GetButtonDown("Spell4"))
         {
             CancelAreaSpell();
-            if (listCurrentSpells[3] != null)
+            if (listCurrentSpells[3] != null && listCurrentSpells[3].spellLevel > 0)
             {
                 _spell = listCurrentSpells[3];
                 CheckCanCast();
@@ -152,7 +162,7 @@ public class PlayerSpellController : MonoBehaviour
         {
             if (listTarget[i] != null)
             {
-                listTarget[i].GetComponent<EnemyController>().TakeDamage(_spell.spellDamage, false);
+                listTarget[i].GetComponent<EnemyController>().TakeDamage(_spell.spellDamage+ _spell.spellLevel/100*10*_spell.spellDamage, false);
             }
         }
         //listTarget = new GameObject[0];
@@ -214,7 +224,7 @@ public class PlayerSpellController : MonoBehaviour
         {
             case SpellAbility.TargetUnit:
                 GameObject go = Instantiate(_spell.spellFX, spawnProjectObject.transform.position, Quaternion.identity);
-                go.GetComponent<RangeSpell>().SetSpell(_spell.spellDamage, targetUnit);
+                go.GetComponent<RangeSpell>().SetSpell(_spell.spellDamage+ _spell.spellLevel/100*10* _spell.spellDamage, targetUnit);
                 break;
             case SpellAbility.TargetPoint:
                 break;
@@ -287,8 +297,10 @@ public class PlayerSpellController : MonoBehaviour
         if (_spell.manaCost <= playerStats.currentMP && _spell.currentSpellCoolDown == 0)
         {
             PlayAnimType(_spell.spellAbility);
+
             _spell.currentSpellCoolDown = _spell.spellCoolDown;
             playerStats.currentMP -= _spell.manaCost;
+
             if(_spell.spellAbility == SpellAbility.NoTarget)
             {
                 BuffSpell spell = _spell as BuffSpell;

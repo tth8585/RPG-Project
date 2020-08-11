@@ -46,6 +46,8 @@ public class Spell: ScriptableObject
 
     public float manaCost;
 
+    public int spellLevel;
+
     public virtual void ActiveSpell(PlayerController c)
     {
 

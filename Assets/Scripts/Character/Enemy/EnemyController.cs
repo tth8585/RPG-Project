@@ -56,7 +56,7 @@ public class EnemyController : MonoBehaviour, IEnemy
         GiveExp();
         DropLoot();
         this.Spawner.Respawn();
-
+        SoundManager.PlaySound(SoundManager.Sound.EnemyHit);
         Destroy(gameObject);
     }
 
@@ -94,8 +94,9 @@ public class EnemyController : MonoBehaviour, IEnemy
             Vector3 pos = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
             ItemPickup instance = Instantiate(itemPickup, pos, Quaternion.identity);
             instance.itemDrop = item;
+            //instance.material.SetTexture(1,item.iconItem);
             //instance.inventory = inventory;
-            instance.GetComponent<Renderer>().material = instance.material;
+            //instance.GetComponent<Renderer>().material = instance.material;
 
             int random = Random.Range(2, 5);
             for(int i = 0; i < random; i++)

@@ -16,15 +16,19 @@ MonoBehaviour:
   spellAffects: 0
   spellDamageType: 0
   spellFX: {fileID: 1778518884697008, guid: 7711d65f2320be7419564401376439a6, type: 3}
-  isActive: 0
   spellId: 4
   spellName: Clarity
   spellIcon: {fileID: 21300000, guid: 1c3621ba77b99a346afb392b2e67352c, type: 3}
   spellDescription: Regen MP
   spellDamage: 0
   spellCastTime: 0
+  spellRange: 0
+  spellAoe: 0
+  spellNumberTarget: 0
   spellCoolDown: 0
   currentSpellCoolDown: 0
   manaCost: 0
+  spellLevel: 0
   manaReserved: 34
   manaRegen: 2.9
+  isActive: 0

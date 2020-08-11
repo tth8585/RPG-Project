@@ -24,10 +24,17 @@ public class UI_MP : MonoBehaviour
     private void UpdateMana(float mp, float maxMp)
     {    
         newFillAmount = (float)(mp / maxMp);
-        this.text.text = ((int)mp).ToString() + "/" + ((int)maxMp).ToString();
+        if (this.text != null)
+        {
+            this.text.text = ((int)mp).ToString() + "/" + ((int)maxMp).ToString();
+        }
+        
         if (newFillAmount > this.image.fillAmount)
         {
-            this.image.fillAmount = newFillAmount;
+            if (this.image != null)
+            {
+                this.image.fillAmount = newFillAmount;
+            }
         }
     }
 }

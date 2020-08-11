@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
 
         //Interact();
     }
-    private void Update()
+    public virtual void Update()
     {
         if (!hasInteracted && playerAgent != null && !playerAgent.pathPending)
         {

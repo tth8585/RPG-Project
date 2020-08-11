@@ -50,7 +50,6 @@ public class ItemPickup : Interactable
     {
         SoundManager.PlaySound(SoundManager.Sound.ItemPick);
         AddItem();
-        Debug.Log("loot");
         fKeyHint.gameObject.SetActive(false);
     }
 
@@ -60,6 +59,7 @@ public class ItemPickup : Interactable
         inventory = Inventory.Instance;
         if (inventory.AddItem(itemCopy))
         {
+            CombatEvent.ItemLoot(itemCopy);
             Destroy(gameObject);
         }
     }

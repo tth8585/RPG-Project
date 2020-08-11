@@ -9,6 +9,7 @@ public class ChooseSystem : MonoBehaviour
     [SerializeField] GameObject nextBtn;
     [SerializeField] GameObject imageFade;
     [SerializeField] GameObject imageFadeMain;
+    [SerializeField] GameObject createNewPanel;
 
     private void Start()
     {
@@ -50,5 +51,14 @@ public class ChooseSystem : MonoBehaviour
         {
             nextBtn.SetActive(true);
         }
+        else
+        {
+            createNewPanel.SetActive(true);
+        }
+    }
+
+    public void CloseCreatePanel()
+    {
+        createNewPanel.SetActive(false);
     }
 }

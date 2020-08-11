@@ -69,6 +69,12 @@
     <Compile Include="Assets\1. GameManager\Scripts\Menu\UIManager.cs" />
     <Compile Include="Assets\1. GameManager\Scripts\Utils\Events.cs" />
     <Compile Include="Assets\1. GameManager\Scripts\Utils\Singleton.cs" />
+    <Compile Include="Assets\10. Quest\CreateNewController.cs" />
+    <Compile Include="Assets\10. Quest\PointToQuest.cs" />
+    <Compile Include="Assets\10. Quest\QuestContentController.cs" />
+    <Compile Include="Assets\10. Quest\QuestController.cs" />
+    <Compile Include="Assets\10. Quest\SpellPlusSystem.cs" />
+    <Compile Include="Assets\10. Quest\TriggerQuestStage2.cs" />
     <Compile Include="Assets\3. Player\Scripts\LevelUpSystem.cs" />
     <Compile Include="Assets\3. Player\Scripts\LevelWindow.cs" />
     <Compile Include="Assets\3. Player\Scripts\MMO_Camera.cs" />
@@ -215,11 +221,14 @@
     <Compile Include="Assets\Scripts\Projectile\Fireball.cs" />
     <Compile Include="Assets\Scripts\Projectile\IProjectileWeapon.cs" />
     <Compile Include="Assets\Scripts\Questing\CollectionGoal.cs" />
+    <Compile Include="Assets\Scripts\Questing\FindNPCGoal.cs" />
     <Compile Include="Assets\Scripts\Questing\Goal.cs" />
     <Compile Include="Assets\Scripts\Questing\KillGoal.cs" />
     <Compile Include="Assets\Scripts\Questing\Quest.cs" />
     <Compile Include="Assets\Scripts\Questing\QuestGiver.cs" />
     <Compile Include="Assets\Scripts\Questing\QuestListSystem.cs" />
+    <Compile Include="Assets\Scripts\Questing\Quests\FindHerbalQuest.cs" />
+    <Compile Include="Assets\Scripts\Questing\Quests\FindMedicQuest.cs" />
     <Compile Include="Assets\Scripts\Questing\Quests\SlimeSlayerQuest.cs" />
     <Compile Include="Assets\Scripts\Spawner\Spawner.cs" />
     <Compile Include="Assets\Scripts\StartMenu\ListButton.cs" />
@@ -232,6 +241,7 @@
     <Compile Include="Assets\Scripts\System\SelectedUnitSystem.cs" />
     <Compile Include="Assets\Scripts\Tooltips\ItemTooltip.cs" />
     <Compile Include="Assets\Scripts\Tooltips\StatTooltip.cs" />
+    <Compile Include="Assets\Scripts\UI\UIInput.cs" />
     <Compile Include="Assets\Scripts\Uti\HandSlider.cs" />
     <Compile Include="Assets\Scripts\Uti\UI_Button.cs" />
     <None Include="Assets\5. Package\ErbGameArt\Epic toon VFX\Demo scene\Readme.txt" />

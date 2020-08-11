@@ -6,6 +6,6 @@ public class LoadingBar : MonoBehaviour
 {
     private void Update()
     {
-        Debug.Log(Loader.GetLoadingProgress());
+       // Debug.Log(Loader.GetLoadingProgress());
     }
 }

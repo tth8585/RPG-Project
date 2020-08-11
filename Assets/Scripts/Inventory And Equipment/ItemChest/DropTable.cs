@@ -13,6 +13,7 @@ public class DropTable
         foreach(LootDrop lootDrop in loot)
         {
             weightSum += lootDrop.weight;
+          
             if (roll < weightSum)
             {
                 return lootDrop.item.GetCopy();

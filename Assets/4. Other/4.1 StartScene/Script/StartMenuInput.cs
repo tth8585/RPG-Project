@@ -15,6 +15,8 @@ public class StartMenuInput : MonoBehaviour
     const string SPELLBAR_ANIM_DISAPPEAR = "spellUIDisappear";
     const string QUEST_ANIM_APPEAR = "quetsAppear";
     const string QUEST_ANIM_DISAPPEAR = "questDisappear";
+    const string HELP_ANIM_APPEAR = "helpAppear";
+    const string HELP_ANIM_DISAPPEAR = "helpDisappear";
 
     const string POPUPSTARTMENU_ANIM_APPEAR = "RightToLeft";
     const string POPUPSTARTMENU_ANIM_DISAPPEAR = "LeftToRight";
@@ -22,6 +24,7 @@ public class StartMenuInput : MonoBehaviour
     [SerializeField] GameObject pressAnyKey;
     [SerializeField] GameObject popupStartMenu;
     [SerializeField] private GameObject settingPanel;
+    [SerializeField] GameObject OptionInGame;
 
     [SerializeField] private GameObject startMenu;
 
@@ -29,6 +32,7 @@ public class StartMenuInput : MonoBehaviour
     [SerializeField] private GameObject _uiMiniMap;
     [SerializeField] private GameObject _uiSpellBar;
     [SerializeField] private GameObject _uiQuestPanel;
+    [SerializeField] private GameObject _uiHelpBtn;
 
     [SerializeField] private Camera cam;
     [SerializeField] private Transform target;
@@ -56,20 +60,6 @@ public class StartMenuInput : MonoBehaviour
     }
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.J))
-        //{
-        //    startMenu.SetActive(!startMenu.activeSelf);
-
-        //    if(startMenu.activeSelf == true)
-        //    {
-        //        HideUI();
-        //    }
-        //    else
-        //    {
-        //        ShowUI();
-        //    }
-        //}
-
         if (Input.anyKeyDown)
         {
             if (pressAnyKey.activeSelf)
@@ -77,6 +67,11 @@ public class StartMenuInput : MonoBehaviour
                 pressAnyKey.SetActive(false);
                 popupStartMenu.GetComponent<Animator>().Play(POPUPSTARTMENU_ANIM_APPEAR);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ShowOptionIngame();
         }
 
         float distance = Vector3.Distance(target.position, cam.transform.position);
@@ -87,9 +82,10 @@ public class StartMenuInput : MonoBehaviour
         }
         else if(startMove == true && distance <= 1f)
         {
-            UIEvent.NewGame();
-            cam.transform.position = originCamPos;
-            startMove = false;
+            //UIEvent.NewGame();
+            //cam.transform.position = originCamPos;
+            //startMove = false;
+            Loader.Load(Loader.Scene.SelectScene);
         }
     }
 
@@ -99,6 +95,7 @@ public class StartMenuInput : MonoBehaviour
         _uiMiniMap.GetComponent<Animator>().Play(MINIMAP_ANIM_APPEAR);
         _uiSpellBar.GetComponent<Animator>().Play(SPELLBAR_ANIM_APPEAR);
         _uiQuestPanel.GetComponent<Animator>().Play(QUEST_ANIM_APPEAR);
+        _uiHelpBtn.GetComponent<Animator>().Play(HELP_ANIM_APPEAR);
     }
 
     private void HideUI()
@@ -107,11 +104,13 @@ public class StartMenuInput : MonoBehaviour
         _uiMiniMap.GetComponent<Animator>().Play(MINIMAP_ANIM_DISAPPEAR);
         _uiSpellBar.GetComponent<Animator>().Play(SPELLBAR_ANIM_DISAPPEAR);
         _uiQuestPanel.GetComponent<Animator>().Play(QUEST_ANIM_DISAPPEAR);
+        _uiHelpBtn.GetComponent<Animator>().Play(HELP_ANIM_DISAPPEAR);
     }
 
     public void Options()
     {
         settingPanel.SetActive(!settingPanel.activeSelf);
+        settingPanel.transform.SetAsLastSibling();
         //LoadManager.instance.SaveData();
         if(settingPanel.activeSelf == false)
         {
@@ -158,5 +157,14 @@ public class StartMenuInput : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         startMenu.SetActive(false);
         BGMController.Instance.PlaySound(BGMController.Music.Ocean);
+    }
+
+    public void ShowOptionIngame()
+    {
+        OptionInGame.SetActive(!OptionInGame.activeSelf);
+        if(OptionInGame.activeSelf == false&& settingPanel.activeSelf ==true)
+        {
+            settingPanel.SetActive(false);
+        }
     }
 }

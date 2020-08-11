@@ -12,7 +12,7 @@ public class ListButton : MonoBehaviour
         transform.Find("Options").GetComponent<UI_Button>().ClickFunc = () =>
         {
             Debug.Log("click");
-            Loader.Load(Loader.Scene.SettingMenu);
+            //Loader.Load(Loader.Scene.SettingMenu);
         };
         transform.Find("Options").GetComponent<UI_Button>().AddButtonSounds();
 

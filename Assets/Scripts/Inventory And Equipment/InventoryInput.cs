@@ -8,6 +8,7 @@ public class InventoryInput : MonoBehaviour
     [SerializeField] GameObject equipmentGameObject;
     [SerializeField] GameObject[] listTooltip;
     [SerializeField] GameObject menuPanel;
+    [SerializeField] GameObject helpPanel;
 
     Animator animMenu;
     bool menuShow;
@@ -18,6 +19,7 @@ public class InventoryInput : MonoBehaviour
     [SerializeField] KeyCode toggleInventoryKey;
     [SerializeField] KeyCode toggleCharacterDetailKey;
     [SerializeField] KeyCode toggleEquipmentKey;
+    [SerializeField] KeyCode toggleHelpKey;
 
     [SerializeField] GameObject testDark;
 
@@ -55,6 +57,11 @@ public class InventoryInput : MonoBehaviour
         if (Input.GetKeyDown(toggleEquipmentKey))
         {
             ToggleEquipment();
+        }
+
+        if (Input.GetKeyDown(toggleHelpKey))
+        {
+            ToggleHelp();
         }
 
         if (Input.GetKeyDown(closeAll))
@@ -128,16 +135,8 @@ public class InventoryInput : MonoBehaviour
         if (equipmentGameObject.activeSelf == true) equipmentGameObject.GetComponent<RectTransform>().SetAsLastSibling();
         CheckNeedCursor();
     }
-
-    public void LoadDataFromSaveFile()
+    public void ToggleHelp()
     {
-        LoadManager.instance.LoadData();
-        LoadManager.instance.LoadItemData(playerController);
-    }
-
-    public void SaveDataToSaveFile()
-    {
-        LoadManager.instance.SaveData();
-        LoadManager.instance.SaveItemData();
+        helpPanel.SetActive(!helpPanel.activeSelf);
     }
 }

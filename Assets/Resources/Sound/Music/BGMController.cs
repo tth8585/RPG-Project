@@ -6,7 +6,7 @@ public class BGMController : MonoBehaviour
     public enum Music
     {
        Cave = 0,
-       Castle = 1,
+       Death = 1,
        Explore = 2,
        Ocean = 3,
        Town = 4,
@@ -37,9 +37,9 @@ public class BGMController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            audioSource.Play();
-        }
+        //if (Input.GetKeyDown(KeyCode.M))
+        //{
+        //    audioSource.Play();
+        //}
     }
 }

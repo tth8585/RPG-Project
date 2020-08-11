@@ -16,6 +16,9 @@ public class SpellSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     protected Color disableColor = Color.clear;
     private Color bgColor= new Color(0.33f,0.33f,0.33f,1);
 
+    public int spellLevel;
+    [SerializeField] GameObject[] listSpellLevelIcon;
+
     private Spell _spell;
     public Spell Spell
     {
@@ -65,5 +68,19 @@ public class SpellSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     public void OnPointerExit(PointerEventData eventData)
     {
         Debug.Log("pointer exit");
+    }
+
+    public void SpellLock()
+    {
+        icon.color = bgColor;
+    }
+
+    public void SpellUnlock()
+    {
+        icon.color = normalColor;
+        for(int i = 0; i < spellLevel; i++)
+        {
+            listSpellLevelIcon[i].SetActive(true);
+        }
     }
 }
